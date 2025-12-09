@@ -1,0 +1,15 @@
+/*
+ * This file is crucial for Tailwind CSS.
+ * It uses directives that Vite/PostCSS processes to inject
+ * all the base styles, components, and utility classes.
+ * DO NOT write custom CSS here, unless using the @layer directive.
+ */
+
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+ 
+ /* Optional: Add custom fonts or body styles here if needed */
+ body {
+     font-family: 'Inter', sans-serif;
+ }
