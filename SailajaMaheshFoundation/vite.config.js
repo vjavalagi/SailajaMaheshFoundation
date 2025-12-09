@@ -7,6 +7,8 @@ import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
+  // Add the route for GitHub Pages deployment
+  base: "/SailajaMaheshFoundation/",
   // Configure the CSS processing pipeline
   css: {
     postcss: {
