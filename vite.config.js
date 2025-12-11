@@ -8,7 +8,7 @@ import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
   // Add the route for GitHub Pages deployment
-  base: "/SailajaMaheshFoundation/",
+  base: "/",
   // Configure the CSS processing pipeline
   css: {
     postcss: {
