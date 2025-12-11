@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import foundationLogo from './assets/foundation.png'; // Assuming the logo is in src/assets/
+import foundationLogo from './assets/Foundation.png'; // Assuming the logo is in src/assets/
 import maheshImg from './assets/Mahesh.jpg';
 import priyaImg from './assets/Priya.jpg';
 import anilImg from './assets/Anil.png';
