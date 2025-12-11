@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import foundationLogo from './assets/foundation.png'; // Assuming the logo is in src/assets/
+import maheshImg from './assets/Mahesh.jpg';
+import priyaImg from './assets/Priya.jpg';
+import anilImg from './assets/Anil.png';
+
 import { 
   Heart, 
   Menu, 
@@ -21,11 +25,38 @@ import {
 
 
 // Helper component for Team Members
-const TeamMember = ({ name, role, desc, theme }) => (
+// const TeamMember = ({ name, role, desc, theme }) => (
+//   <div className={`bg-white ${theme.shapes.card} p-6 shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] transform`}>
+//     {/* Placeholder for Profile Picture */}
+//     <div className={`w-20 h-20 ${theme.shapes.button} ${theme.colors.primaryLight} flex items-center justify-center mb-4 mx-auto`}>
+//       <Users className={`${theme.colors.primaryText} w-10 h-10`} />
+//     </div>
+//     <h4 className="text-xl font-bold text-slate-900 text-center">{name}</h4>
+//     <p className={`text-sm font-semibold ${theme.colors.primaryText} text-center mb-4`}>{role}</p>
+//     <p className="text-slate-600 text-center text-sm">{desc}</p>
+//   </div>
+// );
+
+const TeamMember = ({ name, role, desc, theme, image }) => (
   <div className={`bg-white ${theme.shapes.card} p-6 shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] transform`}>
-    {/* Placeholder for Profile Picture */}
-    <div className={`w-20 h-20 ${theme.shapes.button} ${theme.colors.primaryLight} flex items-center justify-center mb-4 mx-auto`}>
-      <Users className={`${theme.colors.primaryText} w-10 h-10`} />
+    {/* Profile Picture */}
+    <div className={`w-20 h-20 ${theme.shapes.button} overflow-hidden mb-4 mx-auto border-2 ${theme.colors.accentBorder}`}>
+      {image ? (
+        <img 
+          src={image} 
+          alt={`${name} - ${role}`} 
+          className="w-full h-full object-cover"
+        />
+      ) : (
+        // Fallback to foundation logo if no image provided
+        <div className={`w-full h-full ${theme.colors.primaryLight} flex items-center justify-center p-2`}>
+          <img 
+            src={foundationLogo} 
+            alt="Sailaja Mahesh Foundation" 
+            className="w-full h-full object-contain opacity-60"
+          />
+        </div>
+      )}
     </div>
     <h4 className="text-xl font-bold text-slate-900 text-center">{name}</h4>
     <p className={`text-sm font-semibold ${theme.colors.primaryText} text-center mb-4`}>{role}</p>
@@ -431,6 +462,7 @@ const App = () => {
               role="Chairperson" 
               desc="The spouse and caregiver of Sailaja Mahesh, Mahesh’s firsthand experience drives his mission to ensure no family faces cancer alone."
               theme={theme}
+              image={maheshImg}
             />
             <TeamMember 
               name="Chitra Manian Subramanyam" 
@@ -443,12 +475,14 @@ const App = () => {
               role="M.D., M.B.A" 
               desc="US board-certified physician specializing in patient-centric care and expanding access to evidence-based healthcare."
               theme={theme}
+              image={priyaImg}
             />
             <TeamMember 
               name="Anil Kalavakolanu" 
               role="Board Member" 
               desc="Sailaja’s brother. Combines passion for outreach with technology to deliver credible cancer information."
               theme={theme}
+              image={anilImg}
             />
           </div>
 
